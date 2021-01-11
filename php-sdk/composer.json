@@ -1,0 +1,22 @@
+{
+    "name": "Lyfzcom/php-sdk",
+    "type": "library",
+    "description": "lyfz Resource (Cloud) Storage SDK for PHP",
+    "keywords": ["lyfz", "storage", "sdk", "cloud"],
+    "homepage": "http://www.lyfz.net/",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Lyfzcom",
+            "email": "sdk@qiniu.com",
+            "homepage": "http://www.qiniu.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.3"
+    },
+    "autoload": {
+        "psr-4": {"Lyfzcom\\": "src/Lyfzcom"},
+        "files": ["src/Lyfzcom/functions.php"]
+    }
+}
