@@ -9,10 +9,9 @@ $ composer require fwy-olives/lyfzcom
 
 ## 运行环境
 
-| Qiniu SDK版本 | PHP 版本 |
+|  SDK版本 | PHP 版本 |
 |:--------------------:|:---------------------------:|
-|          7.x         |  cURL extension,   5.3 - 5.6,7.0 |
-|          6.x         |  cURL extension,   5.2 - 5.6 |
+|         1.x        |  cURL extension,   >= 5.6 |
 
 ## 使用方法
 
