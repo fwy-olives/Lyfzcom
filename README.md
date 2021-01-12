@@ -1,19 +1,9 @@
-# Qiniu Resource Storage SDK for PHP
-[![doxygen.io](http://doxygen.io/github.com/lyfzcom/php-sdk/?status.svg)](http://doxygen.io/github.com/lyfzcom/php-sdk/)
-[![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg)](LICENSE)
-[![Build Status](https://travis-ci.org/lyfzcom/php-sdk.svg)](https://travis-ci.org/lyfzcom/php-sdk)
-[![Latest Stable Version](https://img.shields.io/packagist/v/lyfzcom/php-sdk.svg)](https://packagist.org/packages/lyfzcom/php-sdk)
-[![Total Downloads](https://img.shields.io/packagist/dt/lyfzcom/php-sdk.svg)](https://packagist.org/packages/lyfzcom/php-sdk)
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/lyfzcom/php-sdk/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/lyfzcom/php-sdk/?branch=master)
-[![Code Coverage](https://scrutinizer-ci.com/g/lyfzcom/php-sdk/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/lyfzcom/php-sdk/?branch=master)
-[![Join Chat](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/lyfzcom/php-sdk?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-[![@lyfzcom on weibo](http://img.shields.io/badge/weibo-%40lyfzcomtek-blue.svg)](http://weibo.com/lyfzcomtek)
 
 ## 安装
 
-* 通过composer，这是推荐的方式，可以使用composer.json 声明依赖，或者运行下面的命令。SDK 包已经放到这里 [`lyfzcom/php-sdk`][install-packagist] 。
+* 通过composer，这是推荐的方式，可以使用composer.json 声明依赖，或者运行下面的命令。SDK 包已经放到这里 [`fwy-olives/lyfzcom`][install-packagist] 。
 ```bash
-$ composer require lyfzcom/php-sdk
+$ composer require fwy-olives/lyfzcom
 ```
 * 直接下载安装，SDK 没有依赖其他第三方库，但需要参照 composer的autoloader，增加一个自己的autoloader程序。
 
