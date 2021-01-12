@@ -16,7 +16,7 @@ $ composer require fwy-olives/lyfzcom
 
 ## 使用方法
 
-### 上传
+### 获取AccessToken
 ```php
 use LyfzcomLyfzcom\Storage\UploadManager;
 use Lyfzcom\Auth;
