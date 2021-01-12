@@ -1,5 +1,5 @@
 {
-    "name": "fwy-olives/Lyfzcom",
+    "name": "fwy-olives/lyfzcom",
     "type": "library",
     "description": "lyfz Resource (Cloud) Storage SDK for PHP",
     "keywords": ["lyfz", "storage", "sdk", "cloud"],
@@ -7,7 +7,7 @@
     "license": "MIT",
     "authors": [
         {
-            "name": "Lyfzcom",
+            "name": "lyfzcom",
             "email": "sdk@lyfz.net",
             "homepage": "http://www.lyfz.net/"
         }
