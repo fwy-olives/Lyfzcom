@@ -11,25 +11,44 @@ $ composer require fwy-olives/lyfzcom
 
 |  SDK版本 | PHP 版本 |
 |:--------------------:|:---------------------------:|
-|         1.x        |  cURL extension,   >= 5.6 |
+|          1.X         |  cURL extension,   5.6,7.0 |
 
 ## 使用方法
 
-### 获取AccessToken
+### 获取toke
 ```php
-use LyfzcomLyfzcom\Storage\UploadManager;
-use Lyfzcom\Auth;
+use Lyfzcom\Center;
 ...
+生产环境
     $Lyfzcom = new Lyfzcom();
-    $auth = new Auth($accessKey, $secretKey);
+    $auth = new Center($accessKey, $secretKey);
+    $token = $auth->getAccessToken();
+...
+测试环境
+    $Lyfzcom = new Lyfzcom();
+    $auth = new Center($accessKey, $secretKey,"dev");
     $token = $auth->getAccessToken();
 ...
 tp
-$auth = new \Lyfzcom\Auth($accessKey, $secretKey);
+$auth = new \Lyfzcom\Center($accessKey, $secretKey);
 $token = $auth->getAccessToken();
 ```
+
+## 测试
+
+``` bash
+$ ./vendor/bin/phpunit tests/Lyfzcom/Tests/
+```
+
+## 常见问题
+
+- $error保留了请求响应的信息，失败情况下ret 为none, 将$error可以打印出来，提交给我们。
+- API 的使用 demo 可以参考 [单元测试](https://github.com/lyfzcom/php-sdk/blob/master/tests)。
+
+## 代码贡献
+
+详情参考[代码提交指南](https://github.com/lyfzcom/php-sdk/blob/master/CONTRIBUTING.md)。
 
 ## 代码许可
 
 The MIT License (MIT).详情见 [License文件](https://github.com/lyfzcom/php-sdk/blob/master/LICENSE).
-
