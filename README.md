@@ -48,7 +48,3 @@ $ ./vendor/bin/phpunit tests/Lyfzcom/Tests/
 ## 代码贡献
 
 详情参考[代码提交指南](https://github.com/lyfzcom/php-sdk/blob/master/CONTRIBUTING.md)。
-
-## 代码许可
-
-The MIT License (MIT).详情见 [License文件](https://github.com/lyfzcom/php-sdk/blob/master/LICENSE).
