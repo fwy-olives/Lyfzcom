@@ -15,7 +15,6 @@ $ composer require fwy-olives/lyfzcom
 
 ## 使用方法
 /--企业中心 start--/
-
 ### 获取toke
 ```php
 use Lyfzcom\Center;
@@ -42,7 +41,6 @@ $auth = new \Lyfzcom\Center($accessKey, $secretKey);
 $data = $auth->Passive();
 /--企业中心 end--/
 /--登录中心 start--/
-
 登录中心
 ### 获取toke
 ```php
