@@ -12,5 +12,5 @@ final class Config
 
     const API_LOGIN  = 'https://api.27yn.cn/sso/v1/';              // 登录系统
 
-    const DEV_LOGiN  = 'https://api.lyfz.net/sso/v1/';              // 登录系统 测试
+    const DEV_LOGIN  = 'https://api.lyfz.net/sso/v1/';              // 登录系统 测试
 }

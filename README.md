@@ -14,13 +14,13 @@ $ composer require fwy-olives/lyfzcom
 |          1.X         |  cURL extension,   5.6,7.0 |
 
 ## 使用方法
+/--企业中心 start--/
 
 ### 获取toke
 ```php
 use Lyfzcom\Center;
 ...
 生产环境
-    $Lyfzcom = new Lyfzcom();
     $auth = new Center($accessKey, $secretKey);
     $token = $auth->getAccessToken();
 ...
@@ -33,3 +33,39 @@ tp
 $auth = new \Lyfzcom\Center($accessKey, $secretKey);
 $token = $auth->getAccessToken();
 ```
+主动获取或推送
+$method=new \Lyfzcom\Active($AccessToken);
+$ret=$method->companyList($uid);
+
+接收事件
+$auth = new \Lyfzcom\Center($accessKey, $secretKey);
+$data = $auth->Passive();
+/--企业中心 end--/
+/--登录中心 start--/
+
+登录中心
+### 获取toke
+```php
+use Lyfzcom\Login;
+...
+生产环境
+    $auth = new Login($accessKey, $secretKey);
+    $token = $auth->getAccessToken();
+...
+测试环境
+    $Lyfzcom = new Lyfzcom();
+    $auth = new Login($accessKey, $secretKey,"dev");
+    $token = $auth->getAccessToken();
+...
+tp
+$auth = new \Lyfzcom\Login($accessKey, $secretKey);
+$token = $auth->getAccessToken();
+```
+主动推送或推送
+$method=new \Lyfzcom\LActive($AccessToken);
+$ret=$method->addUser($data);
+
+接收事件
+$auth = new \Lyfzcom\Login($accessKey, $secretKey);
+$data = $auth->Passive();
+/--登录中心 end--/
