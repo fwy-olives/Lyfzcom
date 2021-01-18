@@ -36,17 +36,6 @@ final class Login
     {
         $content = file_get_contents('php://input');
         $data    = json_decode($content, true);
-/*        if ($data["appId"]!=$this->APPID||!$data["appId"]){
-            return \Lyfzcom\return_error("推送信息的appId不匹配或为空");
-        }*/
-        if (isset($data["eventType"])){
-            switch ($data["eventType"]){
-                case "cancellation":/*账号注销推出推送事件*/
-                    return LAct::cancellation($data);
-                    break;
-                default:
-                    return \Lyfzcom\return_error("No Event");
-            }
-        }
+        return $data;
     }
 }
