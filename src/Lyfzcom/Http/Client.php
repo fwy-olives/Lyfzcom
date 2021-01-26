@@ -7,13 +7,23 @@ use Lyfzcom\Http\Response;
 
 final class Client
 {
-    public static function get($url, array $headers = array())
+    public static function get($url, array $headers = array(
+        "Content-type"=>"application/json",
+        "Accept"=>"application/json",
+        "Cache-Control"=>"no-cache",
+        "Pragma"=>"no-cache"
+    ))
     {
         $request = new Request('GET', $url, $headers);
         return self::sendRequest($request);
     }
 
-    public static function post($url, $body, array $headers = array())
+    public static function post($url, $body, array $headers = array(
+        "Content-type"=>"application/json",
+        "Accept"=>"application/json",
+        "Cache-Control"=>"no-cache",
+        "Pragma"=>"no-cache"
+    ))
     {
         $request = new Request('POST', $url, $headers, $body);
         return self::sendRequest($request);

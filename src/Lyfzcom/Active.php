@@ -26,7 +26,7 @@ final class Active
         $ret = Client::get($url);
 
         if (!$ret->ok()) {
-            return \Lyfzcom\return_error($ret->error);
+            return \Lyfzcom\return_error($ret->statusCode.":".$ret->error,$ret->jsonData);
         }
         return \Lyfzcom\return_success($ret->jsonData);
     }
@@ -38,7 +38,7 @@ final class Active
         $ret = Client::post($url,$data);
 
         if (!$ret->ok()) {
-            return \Lyfzcom\return_error($ret->error);
+            return \Lyfzcom\return_error($ret->statusCode.":".$ret->error,$ret->jsonData);
         }
         return \Lyfzcom\return_success($ret->jsonData);
     }
@@ -50,7 +50,7 @@ final class Active
         $ret = Client::get($url);
 
         if (!$ret->ok()) {
-            return \Lyfzcom\return_error($ret->error);
+            return \Lyfzcom\return_error($ret->statusCode.":".$ret->error,$ret->jsonData);
         }
         return \Lyfzcom\return_success($ret->jsonData);
     }
@@ -62,7 +62,7 @@ final class Active
         $ret = Client::get($url);
 
         if (!$ret->ok()) {
-            return \Lyfzcom\return_error($ret->error);
+            return \Lyfzcom\return_error($ret->statusCode.":".$ret->error,$ret->jsonData);
         }
         return \Lyfzcom\return_success($ret->jsonData);
     }
@@ -74,7 +74,7 @@ final class Active
         $ret = Client::get($url);
 
         if (!$ret->ok()) {
-            return \Lyfzcom\return_error($ret->error);
+            return \Lyfzcom\return_error($ret->statusCode.":".$ret->error,$ret->jsonData);
         }
         return \Lyfzcom\return_success($ret->jsonData);
     }
@@ -86,7 +86,7 @@ final class Active
         $ret = Client::post($url,$data);
 
         if (!$ret->ok()) {
-            return \Lyfzcom\return_error($ret->error);
+            return \Lyfzcom\return_error($ret->statusCode.":".$ret->error,$ret->jsonData);
         }
         return \Lyfzcom\return_success($ret->jsonData);
     }// 获取员工列表
@@ -97,7 +97,7 @@ final class Active
         $ret = Client::get($url);
 
         if (!$ret->ok()) {
-            return \Lyfzcom\return_error($ret->error);
+            return \Lyfzcom\return_error($ret->statusCode.":".$ret->error,$ret->jsonData);
         }
         return \Lyfzcom\return_success($ret->jsonData);
     }
@@ -109,7 +109,7 @@ final class Active
         $ret = Client::get($url);
 
         if (!$ret->ok()) {
-            return \Lyfzcom\return_error($ret->error);
+            return \Lyfzcom\return_error($ret->statusCode.":".$ret->error,$ret->jsonData);
         }
         return \Lyfzcom\return_success($ret->jsonData);
     }
@@ -121,7 +121,7 @@ final class Active
         $ret = Client::get($url);
 
         if (!$ret->ok()) {
-            return \Lyfzcom\return_error($ret->error);
+            return \Lyfzcom\return_error($ret->statusCode.":".$ret->error,$ret->jsonData);
         }
         return \Lyfzcom\return_success($ret->jsonData);
     }
@@ -133,7 +133,7 @@ final class Active
         $ret = Client::get($url);
 
         if (!$ret->ok()) {
-            return \Lyfzcom\return_error($ret->error);
+            return \Lyfzcom\return_error($ret->statusCode.":".$ret->error,$ret->jsonData);
         }
         return \Lyfzcom\return_success($ret->jsonData);
     }
@@ -145,7 +145,7 @@ final class Active
         $ret = Client::post($url,$data);
 
         if (!$ret->ok()) {
-            return \Lyfzcom\return_error($ret->error);
+            return \Lyfzcom\return_error($ret->statusCode.":".$ret->error,$ret->jsonData);
         }
         return \Lyfzcom\return_success($ret->jsonData);
     }
@@ -157,7 +157,7 @@ final class Active
         $ret = Client::get($url);
 
         if (!$ret->ok()) {
-            return \Lyfzcom\return_error($ret->error);
+            return \Lyfzcom\return_error($ret->statusCode.":".$ret->error,$ret->jsonData);
         }
         return \Lyfzcom\return_success($ret->jsonData);
     }
@@ -170,7 +170,7 @@ final class Active
         $ret = Client::get($url);
 
         if (!$ret->ok()) {
-            return \Lyfzcom\return_error($ret->error);
+            return \Lyfzcom\return_error($ret->statusCode.":".$ret->error,$ret->jsonData);
         }
         return \Lyfzcom\return_success($ret->jsonData);
     }
@@ -182,7 +182,7 @@ final class Active
         $ret = Client::get($url);
 
         if (!$ret->ok()) {
-            return \Lyfzcom\return_error($ret->error);
+            return \Lyfzcom\return_error($ret->statusCode.":".$ret->error,$ret->jsonData);
         }
         return \Lyfzcom\return_success($ret->jsonData);
     }
@@ -194,19 +194,19 @@ final class Active
         $ret = Client::post($url,$data);
 
         if (!$ret->ok()) {
-            return \Lyfzcom\return_error($ret->error);
+            return \Lyfzcom\return_error($ret->statusCode.":".$ret->error,$ret->jsonData);
         }
         return \Lyfzcom\return_success($ret->jsonData);
     }
     // 批量添加角色
-    public function batchRoleList($uid)
+    public function batchRoleList($data)
     {
-        $url=$this->url."auth/token?accessToken=".$this->APPID."&secret=".$this->AppSecret;
+        $url=$this->url."other/batchRoleList?accessToken=".$this->accessToken;
 
-        $ret = Client::Get($url);
+        $ret = Client::post($url,$data);
 
         if (!$ret->ok()) {
-            return \Lyfzcom\return_error($ret->error);
+            return \Lyfzcom\return_error($ret->statusCode.":".$ret->error,$ret->jsonData);
         }
         return \Lyfzcom\return_success($ret->jsonData);
     }
@@ -218,7 +218,7 @@ final class Active
         $ret = Client::post($url,$data);
 
         if (!$ret->ok()) {
-            return \Lyfzcom\return_error($ret->error);
+            return \Lyfzcom\return_error($ret->statusCode.":".$ret->error,$ret->jsonData);
         }
         return \Lyfzcom\return_success($ret->jsonData);
     }
@@ -230,7 +230,7 @@ final class Active
         $ret = Client::post($url,$data);
 
         if (!$ret->ok()) {
-            return \Lyfzcom\return_error($ret->error);
+            return \Lyfzcom\return_error($ret->statusCode.":".$ret->error,$ret->jsonData);
         }
         return \Lyfzcom\return_success($ret->jsonData);
     }// 批量添加员工角色
@@ -241,7 +241,7 @@ final class Active
         $ret = Client::post($url,$data);
 
         if (!$ret->ok()) {
-            return \Lyfzcom\return_error($ret->error);
+            return \Lyfzcom\return_error($ret->statusCode.":".$ret->error,$ret->jsonData);
         }
         return \Lyfzcom\return_success($ret->jsonData);
     }
@@ -253,7 +253,7 @@ final class Active
         $ret = Client::get($url);
 
         if (!$ret->ok()) {
-            return \Lyfzcom\return_error($ret->error);
+            return \Lyfzcom\return_error($ret->statusCode.":".$ret->error,$ret->jsonData);
         }
         return \Lyfzcom\return_success($ret->jsonData);
     }
@@ -265,7 +265,7 @@ final class Active
         $ret = Client::get($url);
 
         if (!$ret->ok()) {
-            return \Lyfzcom\return_error($ret->error);
+            return \Lyfzcom\return_error($ret->statusCode.":".$ret->error,$ret->jsonData);
         }
         return \Lyfzcom\return_success($ret->jsonData);
     }
@@ -277,7 +277,7 @@ final class Active
         $ret = Client::post($url,$data);
 
         if (!$ret->ok()) {
-            return \Lyfzcom\return_error($ret->error);
+            return \Lyfzcom\return_error($ret->statusCode.":".$ret->error,$ret->jsonData);
         }
         return \Lyfzcom\return_success($ret->jsonData);
     }
@@ -289,7 +289,7 @@ final class Active
         $ret = Client::get($url);
 
         if (!$ret->ok()) {
-            return \Lyfzcom\return_error($ret->error);
+            return \Lyfzcom\return_error($ret->statusCode.":".$ret->error,$ret->jsonData);
         }
         return \Lyfzcom\return_success($ret->jsonData);
     }

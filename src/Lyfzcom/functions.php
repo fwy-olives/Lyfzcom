@@ -44,11 +44,11 @@ function json_decode($json, $assoc = false, $depth = 512)
 
     return $data;
 }
-function return_error($msg)
+function return_error($msg,$data=array())
 {
-    return array('code'=>0,'msg'=>$msg);
+    return array('code'=>0,'msg'=>$msg,'data'=>$data);
 }
 function return_success($data)
 {
-    return array('code'=>1,'data'=>$data);
+    return array('code'=>1000,'data'=>$data);
 }

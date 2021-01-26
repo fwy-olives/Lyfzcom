@@ -12,9 +12,9 @@ final class LActive
     {
 
         if ($Env=="dev"){
-            $this->url=Config::DEV_CENTER;
+            $this->url=Config::DEV_LOGIN;
         }else{
-            $this->url=Config::API_CENTER;
+            $this->url=Config::API_LOGIN;
         }
         $this->accessToken = $accessToken;
     }
@@ -26,7 +26,7 @@ final class LActive
         $ret = Client::post($url,$data);
 
         if (!$ret->ok()) {
-            return \Lyfzcom\return_error($ret->error);
+            return \Lyfzcom\return_error($ret->statusCode.":".$ret->error,$ret->jsonData);
         }
         return \Lyfzcom\return_success($ret->jsonData);
     }
@@ -38,7 +38,7 @@ final class LActive
         $ret = Client::post($url,$data);
 
         if (!$ret->ok()) {
-            return \Lyfzcom\return_error($ret->error);
+            return \Lyfzcom\return_error($ret->statusCode.":".$ret->error,$ret->jsonData);
         }
         return \Lyfzcom\return_success($ret->jsonData);
     }
@@ -50,7 +50,7 @@ final class LActive
         $ret = Client::get($url);
 
         if (!$ret->ok()) {
-            return \Lyfzcom\return_error($ret->error);
+            return \Lyfzcom\return_error($ret->statusCode.":".$ret->error,$ret->jsonData);
         }
         return \Lyfzcom\return_success($ret->jsonData);
     }
@@ -62,7 +62,7 @@ final class LActive
         $ret = Client::post($url,$data);
 
         if (!$ret->ok()) {
-            return \Lyfzcom\return_error($ret->error);
+            return \Lyfzcom\return_error($ret->statusCode.":".$ret->error,$ret->jsonData);
         }
         return \Lyfzcom\return_success($ret->jsonData);
     }
@@ -74,7 +74,7 @@ final class LActive
         $ret = Client::get($url);
 
         if (!$ret->ok()) {
-            return \Lyfzcom\return_error($ret->error);
+            return \Lyfzcom\return_error($ret->statusCode.":".$ret->error,$ret->jsonData);
         }
         return \Lyfzcom\return_success($ret->jsonData);
     }
@@ -86,7 +86,7 @@ final class LActive
         $ret = Client::get($url);
 
         if (!$ret->ok()) {
-            return \Lyfzcom\return_error($ret->error);
+            return \Lyfzcom\return_error($ret->statusCode.":".$ret->error,$ret->jsonData);
         }
         return \Lyfzcom\return_success($ret->jsonData);
     }
@@ -98,7 +98,7 @@ final class LActive
         $ret = Client::get($url);
 
         if (!$ret->ok()) {
-            return \Lyfzcom\return_error($ret->error);
+            return \Lyfzcom\return_error($ret->statusCode.":".$ret->error,$ret->jsonData);
         }
         return \Lyfzcom\return_success($ret->jsonData);
     }
@@ -110,7 +110,7 @@ final class LActive
         $ret = Client::get($url);
 
         if (!$ret->ok()) {
-            return \Lyfzcom\return_error($ret->error);
+            return \Lyfzcom\return_error($ret->statusCode.":".$ret->error,$ret->jsonData);
         }
         return \Lyfzcom\return_success($ret->jsonData);
     }
@@ -122,7 +122,7 @@ final class LActive
         $ret = Client::get($url);
 
         if (!$ret->ok()) {
-            return \Lyfzcom\return_error($ret->error);
+            return \Lyfzcom\return_error($ret->statusCode.":".$ret->error,$ret->jsonData);
         }
         return \Lyfzcom\return_success($ret->jsonData);
     }
@@ -134,7 +134,7 @@ final class LActive
         $ret = Client::post($url,$data);
 
         if (!$ret->ok()) {
-            return \Lyfzcom\return_error($ret->error);
+            return \Lyfzcom\return_error($ret->statusCode.":".$ret->error,$ret->jsonData);
         }
         return \Lyfzcom\return_success($ret->jsonData);
     }
@@ -146,7 +146,7 @@ final class LActive
         $ret = Client::get($url);
 
         if (!$ret->ok()) {
-            return \Lyfzcom\return_error($ret->error);
+            return \Lyfzcom\return_error($ret->statusCode.":".$ret->error,$ret->jsonData);
         }
         return \Lyfzcom\return_success($ret->jsonData);
     }

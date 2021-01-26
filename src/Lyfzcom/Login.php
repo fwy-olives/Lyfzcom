@@ -28,7 +28,7 @@ final class Login
         $ret = Client::Get($url);
 
         if (!$ret->ok()) {
-            return \Lyfzcom\return_error($ret->error);
+            return \Lyfzcom\return_error($ret->statusCode.":".$ret->error,$ret->jsonData);
         }
         return \Lyfzcom\return_success($ret->jsonData);
     }
