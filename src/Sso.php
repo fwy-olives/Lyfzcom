@@ -1,14 +1,23 @@
 <?php
+
 namespace Lyfzcom;
 
-use Lyfzcom;
-use Lyfzcom\Config;
+
 use Lyfzcom\Http\Client;
-use Lyfzcom\Http\Error;
-final class LActive
+
+/**
+ * 单点登录系统 single sign on
+ * https://www.kancloud.cn/lyfz/sso_lyfz/1803844
+ * Class Sso
+ * @package Lyfzcom
+ */
+final class Sso
 {
+    private $AppId;
+    private $AppSecret;
     private $accessToken;
-    public function __construct($accessToken,$Env="product")
+    private $url;
+    public function __construct($AppId, $AppSecret,$Env="product")
     {
 
         if ($Env=="dev"){
@@ -16,8 +25,26 @@ final class LActive
         }else{
             $this->url=Config::API_LOGIN;
         }
-        $this->accessToken = $accessToken;
+        $this->AppId = $AppId;
+        $this->AppSecret = $AppSecret;
     }
+
+
+    public function getAccessToken()
+    {
+        $url=$this->url."auth/token?appId=".$this->AppId."&secret=".$this->AppSecret;
+        $ret = Client::Get($url);
+        if (!$ret->ok()) {
+            return \Lyfzcom\return_error($ret->statusCode.":".$ret->error,$ret->jsonData);
+        }
+        return \Lyfzcom\return_success($ret->jsonData);
+    }
+
+    public function setAccessToken($accessToken){
+        $this->accessToken=$accessToken;
+        return $this;
+    }
+
     //  注册账户
     public function addUser($data)
     {
