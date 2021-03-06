@@ -16,7 +16,7 @@
         "php": ">=5.3.3"
     },
     "autoload": {
-        "psr-4": {"Lyfzcom\\": "src/Lyfzcom"},
-        "files": ["src/Lyfzcom/functions.php"]
+        "psr-4": {"Lyfzcom\\": "src"},
+        "files": ["src/functions.php"]
     }
 }
