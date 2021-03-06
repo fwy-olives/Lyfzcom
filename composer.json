@@ -1,5 +1,5 @@
 {
-    "name": "fwy-olives/lyfzcom",
+    "name": "lyfzcom",
     "type": "library",
     "description": "lyfz Resource (Cloud) Storage SDK for PHP",
     "keywords": ["lyfz", "storage", "sdk", "cloud"],
