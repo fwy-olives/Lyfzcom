@@ -23,6 +23,8 @@ final class Emc
         }else{
             $this->url=Config::API_CENTER;
         }
+        $this->AppId = $AppId;
+        $this->AppSecret = $AppSecret;
     }
 
 
