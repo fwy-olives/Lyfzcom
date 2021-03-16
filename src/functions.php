@@ -50,5 +50,5 @@ function return_error($msg,$data=array())
 }
 function return_success($data)
 {
-    return array('code'=>1000,'data'=>$data);
+    return array('code'=>1000,'data'=>$data["data"]);
 }
