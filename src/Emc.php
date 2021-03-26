@@ -189,7 +189,18 @@ final class Emc
         }
         return \Lyfzcom\return_success($ret->jsonData);
     }
+    // 获取企业门店详情
+    public function getShopInfo($companyId,$shopId)
+    {
+        $url=$this->url."other/getShopInfo?accessToken=".$this->accessToken."&companyId=".$companyId."&shopId=".$shopId;
 
+        $ret = Client::get($url);
+
+        if (!$ret->ok()) {
+            return \Lyfzcom\return_error($ret->statusCode.":".$ret->error,$ret->jsonData);
+        }
+        return \Lyfzcom\return_success($ret->jsonData);
+    }
     //  获取企业组织架构及关联的员工
     public function userList($companyId)
     {
@@ -276,7 +287,7 @@ final class Emc
     // 获取角色权限列表
     public function getAuthList($companyId,$roleId='')
     {
-        $url=$this->url."other/getAuthList?accessToken=".$this->accessToken."&companyId=".$companyId."&roleId=".$companyId."&$roleId=".$this->AppId;
+        $url=$this->url."other/getAuthList?accessToken=".$this->accessToken."&companyId=".$companyId."&roleId=".$roleId."&appid=".$this->AppId;
 
         $ret = Client::get($url);
 
@@ -313,6 +324,126 @@ final class Emc
     public function findRoleListByUid()
     {
         $url=$this->url."other/findRoleListByUid?accessToken=".$this->accessToken;
+
+        $ret = Client::get($url);
+
+        if (!$ret->ok()) {
+            return \Lyfzcom\return_error($ret->statusCode.":".$ret->error,$ret->jsonData);
+        }
+        return \Lyfzcom\return_success($ret->jsonData);
+    }
+    // 微信公众号下单
+    public function createOrder($data)
+    {
+        $url=$this->url."pay/createOrder?accessToken=".$this->accessToken;
+
+        $ret = Client::post($url,$data);
+
+        if (!$ret->ok()) {
+            return \Lyfzcom\return_error($ret->statusCode.":".$ret->error,$ret->jsonData);
+        }
+        return \Lyfzcom\return_success($ret->jsonData);
+    }
+    // 获取微信支付结果
+    public function queryOrder($subMchid,$outTradeNo)
+    {
+        $url=$this->url."pay/queryOrder?accessToken=".$this->accessToken."&subMchid=".$subMchid."&outTradeNo=".$outTradeNo;
+
+        $ret = Client::get($url);
+
+        if (!$ret->ok()) {
+            return \Lyfzcom\return_error($ret->statusCode.":".$ret->error,$ret->jsonData);
+        }
+        return \Lyfzcom\return_success($ret->jsonData);
+    }
+    //关闭订单-微信
+    public function closeOrder($subMchid,$outTradeNo)
+    {
+        $url=$this->url."pay/closeOrder?accessToken=".$this->accessToken."&subMchid=".$subMchid."&outTradeNo=".$outTradeNo;
+
+        $ret = Client::get($url);
+
+        if (!$ret->ok()) {
+            return \Lyfzcom\return_error($ret->statusCode.":".$ret->error,$ret->jsonData);
+        }
+        return \Lyfzcom\return_success($ret->jsonData);
+    }
+    //微信退款
+    public function refund($data)
+    {
+        $url=$this->url."pay/refund?accessToken=".$this->accessToken;
+
+        $ret = Client::post($url,$data);
+
+        if (!$ret->ok()) {
+            return \Lyfzcom\return_error($ret->statusCode.":".$ret->error,$ret->jsonData);
+        }
+        return \Lyfzcom\return_success($ret->jsonData);
+    }
+    //微信native扫码支付
+    public function getNativeCodeUrl($data)
+    {
+        $url=$this->url."pay/getNativeCodeUrl?accessToken=".$this->accessToken;
+
+        $ret = Client::post($url,$data);
+
+        if (!$ret->ok()) {
+            return \Lyfzcom\return_error($ret->statusCode.":".$ret->error,$ret->jsonData);
+        }
+        return \Lyfzcom\return_success($ret->jsonData);
+    }
+    //微信付款码支付
+    public function createMicropayOrder($data)
+    {
+        $url=$this->url."pay/createMicropayOrder?accessToken=".$this->accessToken;
+
+        $ret = Client::post($url,$data);
+
+        if (!$ret->ok()) {
+            return \Lyfzcom\return_error($ret->statusCode.":".$ret->error,$ret->jsonData);
+        }
+        return \Lyfzcom\return_success($ret->jsonData);
+    }
+    //获取支付结果-支付宝
+    public function queryFaceToFaceOrder($subMchid,$outTradeNo)
+    {
+        $url=$this->url."pay/queryFaceToFaceOrder?accessToken=".$this->accessToken."&subMchid=".$subMchid."&outTradeNo=".$outTradeNo;
+
+        $ret = Client::get($url);
+
+        if (!$ret->ok()) {
+            return \Lyfzcom\return_error($ret->statusCode.":".$ret->error,$ret->jsonData);
+        }
+        return \Lyfzcom\return_success($ret->jsonData);
+    }
+    //当面付之扫码支付
+    public function preCreateFaceToFaceOrder($data)
+    {
+        $url=$this->url."pay/preCreateFaceToFaceOrder?accessToken=".$this->accessToken;
+
+        $ret = Client::post($url,$data);
+
+        if (!$ret->ok()) {
+            return \Lyfzcom\return_error($ret->statusCode.":".$ret->error,$ret->jsonData);
+        }
+        return \Lyfzcom\return_success($ret->jsonData);
+    }
+    //当面付之条码支付
+    public function createFaceToFaceOrder($data)
+    {
+        $url=$this->url."pay/createFaceToFaceOrder?accessToken=".$this->accessToken;
+
+        $ret = Client::post($url,$data);
+
+        if (!$ret->ok()) {
+            return \Lyfzcom\return_error($ret->statusCode.":".$ret->error,$ret->jsonData);
+        }
+        return \Lyfzcom\return_success($ret->jsonData);
+    }
+    //获取企业开通的商户号
+    public function findMchid($companyId)
+    {
+        $url=$this->url."pay/findMchid?accessToken=".$this->accessToken."&companyId=".$companyId;
 
         $ret = Client::get($url);
 
