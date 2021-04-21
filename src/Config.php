@@ -13,4 +13,8 @@ final class Config
     const API_LOGIN  = 'https://api.lyfz.net/sso/v1/';              // 登录系统
 
     const DEV_LOGIN  = 'https://api.27yn.cn/sso/v1/';              // 登录系统 测试
+
+    const API_MEMBER  = 'https://api.lyfz.net/member/v1/';              // 会员系统
+
+    const DEV_MEMBER  = 'https://api.27yn.cn/member/v1/';              // 会员系统 测试
 }

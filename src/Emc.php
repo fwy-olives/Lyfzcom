@@ -19,8 +19,10 @@ final class Emc
     {
 
         if ($Env=="dev"){
+            $this->murl=Config::DEV_MEMBER;
             $this->url=Config::DEV_CENTER;
         }else{
+            $this->murl=Config::API_MEMBER;
             $this->url=Config::API_CENTER;
         }
         $this->AppId = $AppId;
@@ -287,7 +289,7 @@ final class Emc
     // 获取角色权限列表
     public function getAuthList($companyId,$roleId='')
     {
-        $url=$this->url."other/getAuthList?accessToken=".$this->accessToken."&companyId=".$companyId."&roleId=".$roleId."&appid=".$this->AppId;
+        $url=$this->url."other/getAuthList?accessToken=".$this->accessToken."&companyId=".$companyId."&roleId=".$roleId."&appId=".$this->AppId;
 
         $ret = Client::get($url);
 
